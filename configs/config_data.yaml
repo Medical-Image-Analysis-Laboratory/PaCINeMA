@@ -269,7 +269,7 @@ dhcp_fetal:
     rad_score: 0 # radiology score
     sex: 0
     brain_vol: 0
-    label_vol: 0 #[5] # [5, 6]
+    label_vol: [8] # [5, 6]
     pathology: 0
   constraints: # sample only subjects that meet all constraints
     scan_age: [20, 40]
@@ -286,11 +286,11 @@ dhcp_fetal:
   # datasets
   dhcp_fetal:
     file_ids: [ '*_desc-restore_T2w.nii.gz', '*_desc-drawem9_dseg.nii.gz' ]
-    data_path: /path/to/data/fetal273/fmri/dhcp_anat_pipeline/*/*/anat
-    tsv_file: /path/to/data/fetal273/fmri/dhcp_anat_pipeline/dhcp_fetal_stats.tsv
+    data_path: /media/vzalevskyi/data/fetal_dHCP/derivatives/*/*/anat
+    tsv_file: /media/vzalevskyi/data/fetal_dHCP/derivatives/dhcp_fetal_stats.tsv
     n_subjects:
-      train: 300
-      val: 200
+      train: 32
+      val: 10
 
 
 # TODO: take care of normalization problem for nesvor reconstructions!!
@@ -437,3 +437,4 @@ marsfet_nnUNet_ACC:
     n_subjects:
       train: 128
       val: 40
+
